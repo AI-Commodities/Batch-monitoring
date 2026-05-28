@@ -1,0 +1,55 @@
+environment: dev
+
+systems:
+  openlink:
+    log_path: /tmp/simulation/openlink.log
+    threshold_seconds: 1800
+  autosys:
+    api_url: http://localhost:9000/autosys
+    threshold_seconds: 3600
+  feedtool:
+    db_connection: sqlite:///simulation/feedtool.db
+    threshold_seconds: 900
+  db_scheduler:
+    db_connection: sqlite:///simulation/dbscheduler.db
+    threshold_seconds: 1200
+
+polling_interval_seconds: 60
+l1_timeout_seconds: 300
+
+notifications:
+  teams_webhook_url: http://localhost:8080/teams
+  power_automate_url: http://localhost:8080/l1-validation
+
+servicenow:
+  base_url: http://localhost:5000
+  username: admin
+  password: admin
+EOFcat > config/dev.yaml << 'EOF'
+environment: dev
+
+systems:
+  openlink:
+    log_path: /tmp/simulation/openlink.log
+    threshold_seconds: 1800
+  autosys:
+    api_url: http://localhost:9000/autosys
+    threshold_seconds: 3600
+  feedtool:
+    db_connection: sqlite:///simulation/feedtool.db
+    threshold_seconds: 900
+  db_scheduler:
+    db_connection: sqlite:///simulation/dbscheduler.db
+    threshold_seconds: 1200
+
+polling_interval_seconds: 60
+l1_timeout_seconds: 300
+
+notifications:
+  teams_webhook_url: http://localhost:8080/teams
+  power_automate_url: http://localhost:8080/l1-validation
+
+servicenow:
+  base_url: http://localhost:5000
+  username: admin
+  password: admin
