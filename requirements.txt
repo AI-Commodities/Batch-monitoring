@@ -1,0 +1,32 @@
+# AI enrichment
+openai
+tenacity
+
+# Data collection
+SQLAlchemy
+pyodbc
+watchdog
+
+# Orchestration
+APScheduler
+
+# HTTP + simulation
+flask
+requests
+
+# Azure secrets
+azure-identity
+azure-keyvault-secrets
+
+# Config
+pyyaml
+python-dotenv
+
+# Storage + reporting
+psycopg2-binary
+pandas
+
+# Testing
+pytest
+pytest-mock
+responses
