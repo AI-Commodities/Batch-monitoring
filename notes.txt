@@ -1,0 +1,9 @@
+cat > .env.example << 'EOF'
+AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com/
+AZURE_OPENAI_KEY=your-key-here
+ENV=dev
+EOF
+
+git add .env.example
+git commit -m "chore: add .env.example for new collaborators"
+git push
