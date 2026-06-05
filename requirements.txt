@@ -1,32 +1,243 @@
 # AI enrichment
+
 openai
+# Official OpenAI Python SDK.
+# Used to interact with OpenAI models (GPT, embeddings, assistants, etc.).
+# Provides APIs for:
+# - Text generation and chat completions
+# - Structured outputs and function/tool calling
+# - Embeddings generation for semantic search and vector databases
+# - Image generation and multimodal processing
+# - Authentication and request handling to OpenAI services
+# Typically used to enrich collected data with AI-generated insights,
+# summaries, classifications, sentiment analysis, tagging, and metadata extraction.
+
 tenacity
+# General-purpose retrying library.
+# Automatically retries failed operations based on configurable rules.
+# Commonly used with API calls (such as OpenAI requests) to handle:
+# - Rate limiting (HTTP 429)
+# - Temporary network failures
+# - Service unavailability
+# - Timeout errors
+# Supports:
+# - Exponential backoff
+# - Fixed delays
+# - Custom retry conditions
+# - Maximum retry attempts
+# Helps make AI enrichment pipelines more resilient and production-ready.
 
 # Data collection
+
 SQLAlchemy
+# Python ORM (Object Relational Mapper) and SQL toolkit.
+# Used to connect to databases and execute queries.
+# Provides:
+# - Database abstraction layer
+# - ORM models mapped to database tables
+# - Query building without writing raw SQL
+# - Transaction management
+# - Connection pooling
+# Supports multiple databases including:
+# - SQL Server
+# - PostgreSQL
+# - MySQL
+# - SQLite
+# Often serves as the main interface for reading and writing collected data.
+
 pyodbc
+# ODBC (Open Database Connectivity) driver for Python.
+# Commonly used to connect to Microsoft SQL Server databases.
+# Allows:
+# - Executing SQL queries
+# - Calling stored procedures
+# - Reading and writing table data
+# - Accessing enterprise databases through ODBC drivers
+# Frequently used when integrating with legacy or corporate SQL Server systems.
+
 watchdog
+# Filesystem monitoring library.
+# Watches directories and files for changes in real time.
+# Can detect:
+# - File creation
+# - File modification
+# - File deletion
+# - File movement/renaming
+# Common use cases:
+# - Triggering ETL jobs when new files arrive
+# - Monitoring incoming data feeds
+# - Automatically processing uploaded reports
+# - Event-driven automation workflows
 
 # Orchestration
+
 APScheduler
+# Advanced Python Scheduler.
+# Used to schedule and manage recurring jobs/tasks.
+# Supports:
+# - Cron-style schedules
+# - Fixed interval execution
+# - One-time scheduled jobs
+# - Background task execution
+# Common use cases:
+# - Running enrichment pipelines every hour
+# - Daily report generation
+# - Scheduled database syncs
+# - Periodic health checks and maintenance jobs
+# Can store job metadata in databases for persistence.
 
 # HTTP + simulation
+
 flask
+# Lightweight Python web framework.
+# Used to build:
+# - REST APIs
+# - Internal microservices
+# - Webhooks
+# - Admin dashboards
+# Provides:
+# - Routing
+# - Request handling
+# - Response generation
+# - Middleware support
+# Commonly used as a lightweight service layer around data processing systems.
+
 requests
+# Most widely used HTTP client library in Python.
+# Simplifies communication with external APIs and web services.
+# Supports:
+# - GET, POST, PUT, DELETE requests
+# - Authentication mechanisms
+# - Custom headers
+# - File uploads/downloads
+# - JSON serialization/deserialization
+# Frequently used for:
+# - Calling third-party APIs
+# - Fetching external datasets
+# - Sending webhook notifications
+# - Integrating with SaaS platforms
 
 # Azure secrets
+
 azure-identity
+# Azure authentication library.
+# Provides secure authentication methods for Azure services.
+# Supports:
+# - Managed Identity
+# - Service Principals
+# - Azure CLI authentication
+# - DefaultAzureCredential chain
+# Eliminates the need to hardcode credentials in applications.
+# Used as the authentication layer for Azure SDK services.
+
 azure-keyvault-secrets
+# Azure Key Vault client library for secret management.
+# Allows applications to securely retrieve and manage:
+# - API keys
+# - Database passwords
+# - Connection strings
+# - Certificates
+# - Tokens
+# Common workflow:
+# Application authenticates using azure-identity,
+# then securely fetches secrets from Azure Key Vault.
+# Helps centralize and secure sensitive configuration.
 
 # Config
+
 pyyaml
+# YAML parser and emitter for Python.
+# Used for reading and writing YAML configuration files.
+# Commonly stores:
+# - Environment settings
+# - Pipeline configuration
+# - Application parameters
+# - Deployment settings
+# Advantages:
+# - Human-readable format
+# - Supports nested structures
+# - Easier to maintain than large JSON config files
+
 python-dotenv
+# Loads environment variables from .env files.
+# Helps manage configuration separately from source code.
+# Commonly stores:
+# - API keys
+# - Database URLs
+# - Environment-specific settings
+# - Feature flags
+# Benefits:
+# - Simplifies local development
+# - Supports Twelve-Factor App principles
+# - Prevents sensitive values from being hardcoded
 
 # Storage + reporting
+
 psycopg2-binary
+# PostgreSQL database adapter for Python.
+# Enables communication with PostgreSQL databases.
+# Provides:
+# - SQL execution
+# - Transaction handling
+# - Bulk inserts
+# - Stored procedure execution
+# Binary distribution includes precompiled dependencies,
+# making installation easier than building from source.
+# Often used for production data storage and analytics workloads.
+
 pandas
+# Powerful data analysis and manipulation library.
+# Core component for reporting, ETL, and analytics workflows.
+# Provides:
+# - DataFrame data structures
+# - Data cleaning and transformation
+# - Aggregations and calculations
+# - CSV/Excel/SQL integration
+# - Time series processing
+# Common use cases:
+# - Generating reports
+# - Data enrichment processing
+# - KPI calculations
+# - Exporting business datasets
+# - Preparing data for machine learning and visualization
 
 # Testing
+
 pytest
+# Popular Python testing framework.
+# Used for:
+# - Unit testing
+# - Integration testing
+# - Functional testing
+# Features:
+# - Simple test syntax
+# - Fixtures for reusable setup logic
+# - Parameterized tests
+# - Detailed failure reporting
+# Widely adopted for automated testing pipelines and CI/CD systems.
+
 pytest-mock
+# Pytest plugin that integrates Python's mocking capabilities.
+# Simplifies creation of:
+# - Mock objects
+# - Stub functions
+# - Patched dependencies
+# Useful for:
+# - Isolating components during testing
+# - Avoiding real database/API calls
+# - Verifying function interactions
+# Helps create reliable and deterministic tests.
+
 responses
+# HTTP request mocking library for Python.
+# Intercepts requests made through the requests library.
+# Allows tests to simulate:
+# - External APIs
+# - Success responses
+# - Error conditions
+# - Timeouts
+# Benefits:
+# - Faster test execution
+# - No dependency on external services
+# - Predictable and repeatable test results
+# Commonly used when testing integrations with third-party APIs.
