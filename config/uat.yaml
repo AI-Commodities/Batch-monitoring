@@ -1,0 +1,29 @@
+cat > config/uat.yaml << 'EOF'
+environment: uat
+
+systems:
+  openlink:
+    log_path: /uat/logs/openlink.log
+    threshold_seconds: 2700  # 45 minutes (stricter for UAT)
+  autosys:
+    api_url: http://uat-autosys:9000/autosys
+    threshold_seconds: 4500  # 75 minutes
+  feedtool:
+    db_connection: postgresql://uat:password@uat-db/feedtool
+    threshold_seconds: 1200  # 20 minutes
+  db_scheduler:
+    db_connection: postgresql://uat:password@uat-db/scheduler
+    threshold_seconds: 1800  # 30 minutes
+
+polling_interval_seconds: 120  # Check every 2 minutes
+l1_timeout_seconds: 600  # 10 minutes timeout for UAT
+
+notifications:
+  teams_webhook_url: https://company.webhook.office.com/uat/teams
+  power_automate_url: https://flow.microsoft.com/uat/validate
+
+servicenow:
+  base_url: https://dev.service-now.com/uat
+  username: uat_user
+  password: ${SERVICENOW_UAT_PASSWORD}  # Use env variable for security
+EOF

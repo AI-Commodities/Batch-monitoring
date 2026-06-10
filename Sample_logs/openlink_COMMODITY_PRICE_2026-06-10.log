@@ -1,0 +1,11 @@
+[OPENLINK Batch Monitor]
+Timestamp: 2026-06-10 10:25:56
+Job Name: COMMODITY_PRICE
+Status: RUNNING
+Duration: 202 seconds
+Records Processed: 1962
+Details:
+- Started at: 2026-06-10 10:25:56
+- Connection: OPENLINK_PROD
+- Environment: DEV
+RUNNING: Batch is currently processing

@@ -1,0 +1,11 @@
+[OPENLINK Batch Monitor]
+Timestamp: 2026-06-10 10:26:21
+Job Name: GOLD_FIXING
+Status: SUCCESS
+Duration: 284 seconds
+Records Processed: 8655
+Details:
+- Started at: 2026-06-10 10:26:21
+- Connection: OPENLINK_PROD
+- Environment: DEV
+SUCCESS: Batch completed successfully

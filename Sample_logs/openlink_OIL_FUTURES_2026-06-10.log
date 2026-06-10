@@ -1,0 +1,11 @@
+[OPENLINK Batch Monitor]
+Timestamp: 2026-06-10 10:26:25
+Job Name: OIL_FUTURES
+Status: RUNNING
+Duration: 280 seconds
+Records Processed: 5424
+Details:
+- Started at: 2026-06-10 10:26:25
+- Connection: OPENLINK_PROD
+- Environment: DEV
+RUNNING: Batch is currently processing

@@ -1,0 +1,29 @@
+cat > config/prod.yaml << 'EOF'
+environment: production
+
+systems:
+  openlink:
+    log_path: /prod/logs/openlink/production.log
+    threshold_seconds: 3600  # 60 minutes - give more time
+  autosys:
+    api_url: https://autosys.prod.company.com/api/jobs
+    threshold_seconds: 7200  # 120 minutes - large batches take time
+  feedtool:
+    db_connection: postgresql://prod:${DB_PASSWORD}@prod-db-cluster/feedtool
+    threshold_seconds: 1800  # 30 minutes
+  db_scheduler:
+    db_connection: postgresql://prod:${DB_PASSWORD}@prod-db-cluster/scheduler
+    threshold_seconds: 2400  # 40 minutes
+
+polling_interval_seconds: 300  # Check every 5 minutes (don't overload)
+l1_timeout_seconds: 900  # 15 minutes timeout for L1
+
+notifications:
+  teams_webhook_url: https://company.webhook.office.com/prod/teams
+  power_automate_url: https://flow.microsoft.com/prod/l1-validation
+
+servicenow:
+  base_url: https://company.service-now.com
+  username: svc_batch_monitor
+  password: ${SERVICENOW_PROD_PASSWORD}  # From secrets manager
+EOF
