@@ -9,3 +9,8 @@ git commit -m "chore: add .env.example for new collaborators"
 git push
 
 python simulation/log_generator.py --action generate --count 5
+
+
+#	Subscription	Why It's Mandatory	What It Actually Does	What Happens WITHOUT It
+1	Azure OpenAI (GPT-4o)	The brain of the entire system — without this, there are NO AI agents. Nothing works.	Reads 500 lines of raw logs → understands what failed → checks history → finds root cause → suggests fix. All in 3 seconds.	L2 manually reads logs for 10 minutes per failure. No pattern detection. No root cause. Same failures keep repeating.
+2	Power Automate	The only way L1 validates in 30 seconds — without this, L1 manually copy-pastes and forwards like today.	Sends interactive Teams card with 3 buttons: Approve (routes to L2), Override (edit then route), Dismiss (false alarm). Auto-escalates if L1 doesn't respond in 5 minutes.	L1 still does manual copy-paste across 4 apps. 15-minute process stays 15 minutes. Auto-escalation doesn't exist. Night shifts 
