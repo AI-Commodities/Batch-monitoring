@@ -7,3 +7,5 @@ EOF
 git add .env.example
 git commit -m "chore: add .env.example for new collaborators"
 git push
+
+python simulation/log_generator.py --action generate --count 5
